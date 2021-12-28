@@ -1,0 +1,58 @@
+@import "../../../variables";
+
+.welcomeSection {
+  background-color: $base-color1;
+  border-radius: 34px;
+  box-shadow: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+  .welcomeImgWrapper {
+    border-radius: 34px;
+    background-image: url("../../../../assets/Stuck_at_Home.png"); /* The image used */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: contain;
+  }
+}
+
+.booksSection {
+  background-color: $base-color2;
+
+  border-radius: 34px;
+  .bookSearch {
+    .selectWrapper {
+      width: 20rem !important;
+    }
+  }
+  .bookListSection {
+    overflow: overlay;
+  }
+}
+
+.statisticSection {
+  .chartContainer {
+    background-color: $base-color2;
+    border-radius: 34px;
+  }
+  .quoteContainer {
+    background-color: $base-color1;
+    border-radius: 34px;
+    .quoteImgWrapper {
+      width: 201.84px;
+      height: 207.12px;
+      background-image: url("../../../../assets/Vector1.png"); /* The image used */
+      background-position: center; /* Center the image */
+      background-repeat: no-repeat; /* Do not repeat the image */
+      background-size: contain;
+
+      .quoteImg {
+        width: 187.42px;
+        height: 133.27px;
+        margin-left: 2rem;
+        background-image: url("../../../../assets/Hands_Show.png"); /* The image used */
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: contain;
+      }
+    }
+  }
+}

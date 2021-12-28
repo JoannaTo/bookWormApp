@@ -1,0 +1,173 @@
+<div class="container-fluid mt-2">
+  <div class="row">
+    <!--Quote form section-->
+    <div class="col-sm-12 quoteFormContainer">
+      <div class="row">
+        <!--Img-->
+        <div
+          class="
+            col-lg-6 col-12
+            imgWrapper
+            d-flex
+            flex-lg-row flex-column
+            justify-content-center
+            align-items-center
+            px-5
+          "
+        >
+          <div class="text">
+            <h2 class="mb-5">Add a quote here!</h2>
+            <p class="w-75">
+              Add quote of you're favorite author and enjoy in the wisdom of the
+              words!
+            </p>
+          </div>
+          <div class="img"></div>
+        </div>
+        <!--Quote form-->
+        <div
+          class="
+            col-lg-6 col-12
+            formWrapper
+            d-flex
+            flex-column
+            justify-content-center
+          "
+        >
+          <form [formGroup]="quoteForm" (ngSubmit)="addQuote()">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >Name of the author:
+              </label>
+              <input
+                type="text"
+                class="form-control rounded-pill"
+                formControlName="author"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label"
+                >Quote:
+              </label>
+              <input
+                type="text"
+                class="form-control rounded-pill"
+                formControlName="quote"
+              />
+            </div>
+
+            <button
+              type="submit"
+              class="btn btn-primary rounded-pill mt-4 w-100"
+              [disabled]="!quoteForm.valid"
+            >
+              Add quote
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--Book form section-->
+    <div class="col-sm-12 bookFormContainer mt-5">
+      <div class="row">
+        <div
+          class="
+            col-sm-6
+            bookFormWrapper
+            d-flex
+            flex-column
+            justify-content-center
+          "
+        >
+          <form [formGroup]="bookForm" (ngSubmit)="addBook()">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >Image URL:
+              </label>
+              <input
+                type="text"
+                class="form-control rounded-pill"
+                formControlName="imgUrl"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Name: </label>
+              <input
+                type="text"
+                class="form-control rounded-pill"
+                formControlName="name"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label"
+                >Author:
+              </label>
+              <input
+                type="text"
+                class="form-control rounded-pill"
+                formControlName="author"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label"
+                >Stars:
+              </label>
+              <div class="stars">
+                <a class="btn btn-default" *ngFor="let star of stars">
+                  <i (click)="onStarClick(star.id)" [ngClass]="[star.class]"></i
+                ></a>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label">Status:</label>
+              <select
+                class="form-select rounded-pill"
+                id="inputGroupSelect01"
+                formControlName="status"
+              >
+                <option value="1">Read</option>
+                <option value="2">In progress</option>
+                <option value="3" selected>Unread</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label"
+                >Comment:
+              </label>
+              <input
+                type="text"
+                class="form-control rounded-pill"
+                formControlName="comment"
+              />
+            </div>
+            <button
+              type="submit"
+              class="btn btn-secondary text-white rounded-pill mt-5 w-100"
+              [disabled]="!bookForm.valid"
+            >
+              Add book
+            </button>
+          </form>
+        </div>
+        <div
+          class="
+            col-sm-6
+            bookFormTextWrapper
+            d-flex
+            flex-column
+            align-items-center
+            py-3
+          "
+        >
+          <div class="text w-75">
+            <h2 class="mb-5">Add a book!</h2>
+            <p>
+              Add new books into your reading wishlist by submitting the form!
+            </p>
+          </div>
+          <div class="bookImg"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+@import "../../../variables";
+.allBooksSection {
+  .textWrapper {
+    background-color: $base-color1;
+    border-radius: 34px;
+  }
+  .booksWrapper {
+    min-height: 45rem;
+    background-color: $base-color2;
+    border-radius: 34px;
+
+    .bookList {
+      overflow-y: scroll;
+      height: 35rem;
+    }
+  }
+}
+::-webkit-scrollbar {
+  height: 12px;
+  width: 12px;
+  background: #56367f;
+  -webkit-border-radius: 1ex;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f5789f;
+  -webkit-border-radius: 1ex;
+}

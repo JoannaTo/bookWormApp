@@ -1,0 +1,91 @@
+<div class="container-fluid authSection h-100">
+  <div class="row">
+    <div
+      class="
+        col-sm-7
+        authImgContainer
+        bg-primary
+        d-flex
+        flex-column
+        align-items-center
+        py-3
+      "
+    >
+      <h1 class="text-uppercase text-white">Bookworm</h1>
+      <p class="text-white w-75 mt-5 mb-5">
+        Manage your book wishlist with Bookworm! Keep track of books you
+        read,the ones you read at the moment or the ones that are on your
+        wishlist!
+      </p>
+      <div class="img"></div>
+    </div>
+
+    <div
+      class="
+        col-sm-5
+        authFormContianer
+        d-flex
+        flex-column
+        align-items-center
+        justify-content-center
+        py-3
+      "
+    >
+      <div class="img mb-5"></div>
+      <h2>Login to your account!</h2>
+      <p>See what's going on whit your books.</p>
+
+      <div class="authForm mt-5">
+        <form
+          class="d-flex flex-column"
+          [formGroup]="authForm"
+          (ngSubmit)="onSubmit()"
+        >
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"
+              >Email address</label
+            >
+            <input
+              formControlName="email"
+              type="email"
+              class="form-control rounded-pill"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+            />
+            <div id="emailHelp" class="form-text">
+              We'll never share your email with anyone else.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"
+              >Password</label
+            >
+            <input
+              formControlName="password"
+              type="password"
+              class="form-control rounded-pill"
+              id="exampleInputPassword1"
+            />
+          </div>
+          <div class="mb-3 form-check">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              id="exampleCheck1"
+            />
+            <label class="form-check-label" for="exampleCheck1"
+              >Remember me!</label
+            >
+          </div>
+          <button
+            type="submit"
+            class="btn btn-primary rounded-pill mt-4"
+            [disabled]="!authForm.valid"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

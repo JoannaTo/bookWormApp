@@ -1,0 +1,124 @@
+<div class="container-fluid h-100">
+  <div class="row flex-column h-100">
+    <!--Welcome text container-->
+
+    <div class="col-sm-12">
+      <div class="row mt-3 welcomeSection">
+        <!--welcome img-->
+
+        <div class="col-lg-6 col-12 welcomeImgWrapper bg-secondary"></div>
+
+        <!--welcome text-->
+
+        <div
+          class="col-lg-6 col-12 welcomeTextContainer py-3 d-flex flex-column"
+        >
+          <h2 class="mb-3">Welcome back,dear reader!</h2>
+
+          <p class="">What are you reading today?</p>
+          <br />
+          <div class="btns d-flex flex-row">
+            <a
+              class="btn btn-primary text-light rounded-pill"
+              routerLink="/dashboard/add"
+              >Add book</a
+            >
+            <a
+              class="btn btn-secondary text-light mx-3 rounded-pill"
+              routerLink="/dashboard/add"
+              >Add quote</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Books and statistic-->
+
+    <div class="col-sm-12 mt-5">
+      <div class="row">
+        <!--Books section-->
+
+        <div class="col-lg-8 col-12 booksSection py-3">
+          <!--Book search-->
+
+          <div
+            class="
+              bookSearch
+              d-flex
+              flex-row
+              justify-content-between
+              align-items-center
+            "
+          >
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control rounded-pill"
+                placeholder="Search for a book..."
+                aria-label="book"
+                aria-describedby="basic-addon1"
+                [(ngModel)]="searchWord"
+                (keyup)="onEnter()"
+              />
+            </div>
+            <div class="input-group selectWrapper mb-3">
+              <select
+                class="form-select rounded-pill"
+                id="inputGroupSelect01"
+                (change)="onChange($event)"
+              >
+                <option selected>Choose...</option>
+                <option value="read">Read</option>
+                <option value="In progress">In progress</option>
+                <option value="unread">Unread</option>
+              </select>
+            </div>
+          </div>
+
+          <!--Book list-->
+          <app-book-list [filterWord]="searchWord"></app-book-list>
+        </div>
+
+        <!--Statistic-->
+
+        <div class="col-lg-4 col-12 d-flex flex-column statisticSection">
+          <div class="chartContainer py-3 mb-3">
+            <apx-chart
+              [series]="chartOptions.series"
+              [chart]="chartOptions.chart"
+              [labels]="chartOptions.labels"
+              [theme]="chartOptions.theme"
+              [responsive]="chartOptions.responsive"
+            ></apx-chart>
+          </div>
+          <div
+            class="
+              quoteContainer
+              d-flex
+              flex-column
+              justify-content-center
+              align-items-center
+              py-3
+            "
+          >
+            <h3>Your quote of the day!</h3>
+            <p>{{ chosenQuote.quote }}</p>
+            <small>{{ chosenQuote.author }}</small>
+            <div
+              class="
+                quoteImgWrapper
+                d-flex
+                flex-column
+                justify-content-center
+                align-items-center
+              "
+            >
+              <div class="quoteImg"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+@import "../../../variables";
+
+.quoteFormContainer {
+  .imgWrapper {
+    background-color: $base-color1;
+    border-radius: 34px;
+    .text {
+      /* margin-left: 1rem; */
+    }
+    .img {
+      width: 317px;
+      height: 317px;
+      background-image: url("../../../../assets/Mention-rafiki\ 1.png"); /* The image used */
+      background-position: center; /* Center the image */
+      background-repeat: no-repeat; /* Do not repeat the image */
+      background-size: contain;
+    }
+  }
+  .formWrapper {
+  }
+}
+
+.bookFormContainer {
+  .bookFormTextWrapper {
+    background-color: $base-color2;
+    border-radius: 34px;
+
+    .bookImg {
+      width: 453px;
+      height: 408px;
+      background-image: url("../../../../assets/Bibliophile-cuate\ 1.png"); /* The image used */
+      background-position: center; /* Center the image */
+      background-repeat: no-repeat; /* Do not repeat the image */
+      background-size: contain;
+    }
+  }
+}
+.activeStar {
+  color: #ffc107 !important;
+}

@@ -1,0 +1,132 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <div class="container-fluid h-100">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarTogglerDemo01"
+      aria-controls="navbarTogglerDemo01"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      appDropdown
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="
+        collapse
+        navbar-collapse
+        d-lg-flex
+        flex-lg-column
+        h-100
+        justify-content-between
+        dropDownContent
+      "
+      id="navbarTogglerDemo01"
+    >
+      <div
+        class="
+          profile
+          d-flex
+          flex-column
+          justify-content-center
+          align-items-center
+        "
+      >
+        <a class="navbar-brand text-light fs-6 mx-2" href="#"> BookWorm</a>
+        <img src="../../assets/img_avatar.png" class="avatarImg" alt="" />
+        <p class="text-light mt-4">Profile</p>
+      </div>
+      <ul class="navbar-nav mb-2 mb-lg-0 d-flex flex-column">
+        <li
+          class="
+            mb-5
+            nav-item
+            d-flex
+            flex-column
+            justify-content-center
+            align-items-center
+          "
+          routerLink="main"
+        >
+          <div
+            class="d-flex flex-column justify-content-center align-items-center"
+            routerLinkActive="activeTab"
+          >
+            <i class="fas fa-home text-light fs-2"></i>
+          </div>
+          <a
+            class="nav-link active text-light"
+            routerLink="main"
+            aria-current="page"
+            href="#"
+            >Home</a
+          >
+        </li>
+        <li
+          class="
+            mb-5
+            nav-item
+            d-flex
+            flex-column
+            justify-content-center
+            align-items-center
+          "
+          routerLink="add"
+        >
+          <div
+            class="d-flex flex-column justify-content-center align-items-center"
+            routerLinkActive="activeTab"
+          >
+            <i class="fas fa-plus text-light fs-2"></i>
+          </div>
+
+          <a
+            class="nav-link active text-light"
+            routerLink="add"
+            aria-current="page"
+            >Add</a
+          >
+        </li>
+        <li
+          class="
+            mb-5
+            nav-item
+            d-flex
+            flex-column
+            justify-content-center
+            align-items-center
+          "
+          routerLink="all"
+        >
+          <div
+            class="d-flex flex-column justify-content-center align-items-center"
+            routerLinkActive="activeTab"
+          >
+            <i class="fas fa-book text-light fs-2"></i>
+          </div>
+
+          <a
+            class="nav-link active text-light"
+            routerLink="all"
+            aria-current="page"
+            href="#"
+            >All</a
+          >
+        </li>
+      </ul>
+      <div
+        class="
+          logOut
+          rounded-circle
+          bg-secondary
+          d-flex
+          justify-content-center
+          align-items-center
+        "
+      >
+        <i class="fas fa-sign-out-alt text-light fs-3"></i>
+      </div>
+    </div>
+  </div>
+</nav>

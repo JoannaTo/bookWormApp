@@ -1,0 +1,15 @@
+.activeStar {
+  color: #ffc107 !important;
+}
+
+.card {
+  cursor: pointer;
+  .card-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .open ul {
+    display: block !important;
+  }
+}

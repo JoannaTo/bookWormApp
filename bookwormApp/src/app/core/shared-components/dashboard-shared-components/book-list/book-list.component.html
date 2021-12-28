@@ -1,0 +1,12 @@
+<div class="bookListSection container-fluid">
+  <div class="row">
+    <div class="col-sm-12 d-flex flex-row flex-wrap">
+      <!--Book-->
+      <app-book-item
+        *ngFor="let book of books; let i = index"
+        [id]="i"
+        [book]="book"
+      ></app-book-item>
+    </div>
+  </div>
+</div>

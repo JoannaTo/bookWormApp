@@ -1,0 +1,30 @@
+.authSection {
+  .authImgContainer {
+    .img {
+      width: 760px;
+      height: 532px;
+      background-image: url("../../../assets/meditating.png"); /* The image used */
+      background-position: center; /* Center the image */
+      background-repeat: no-repeat; /* Do not repeat the image */
+      background-size: contain;
+    }
+  }
+  .authFormContianer {
+    .img {
+      width: 195.21px;
+      height: 122px;
+      background-image: url("../../../assets/books.png"); /* The image used */
+      background-position: center; /* Center the image */
+      background-repeat: no-repeat; /* Do not repeat the image */
+      background-size: contain;
+    }
+    .authForm {
+      width: 420px;
+      height: 428px;
+    }
+  }
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}

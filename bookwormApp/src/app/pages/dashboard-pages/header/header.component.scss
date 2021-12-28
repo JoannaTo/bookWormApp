@@ -1,0 +1,56 @@
+.open .dropDownContent {
+  display: block !important;
+}
+
+nav {
+  padding-left: 0px !important;
+  height: 65rem;
+  border-radius: 1rem;
+  .container-fluid {
+    padding-left: 0% !important;
+    .nav-item {
+      cursor: pointer;
+    }
+    .activeTab {
+      height: 4rem;
+      width: 4rem;
+      background-image: url("../../../../assets/Vector.png"); /* The image used */
+      background-position: center; /* Center the image */
+      background-repeat: no-repeat; /* Do not repeat the image */
+      background-size: contain;
+    }
+    .profile {
+      cursor: pointer;
+      .avatarImg {
+        vertical-align: middle;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+    }
+    .logOut {
+      cursor: pointer;
+      height: 3rem;
+      width: 3rem;
+    }
+  }
+}
+
+//MEDIA QUERIES
+//PHONE
+@media only screen and (max-width: 600px) {
+  nav {
+    padding-left: 0px !important;
+    height: auto !important;
+    border-radius: 0px !important;
+  }
+}
+
+//LAPTOP
+@media only screen and (max-width: 988px) {
+  nav {
+    padding-left: 0px !important;
+    height: auto !important;
+    border-radius: 0px !important;
+  }
+}

@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+$primary: #56367f;
+$secondary: #f5789f;
+
+$container-padding-x: 0%;
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+body {
+  overflow-x: hidden;
+}
