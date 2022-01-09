@@ -44,7 +44,7 @@ bookRoute.route("/book/:id").delete(async (req, res, next) => {
       id: req.params.id,
     },
   });
-  return res.send("ok");
+  return res.json({ msg: "ok" });
 });
 
 module.exports = bookRoute;

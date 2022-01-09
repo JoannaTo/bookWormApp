@@ -26,3 +26,8 @@
   background: #f5789f;
   -webkit-border-radius: 1ex;
 }
+@media only screen and (max-width: 600px) {
+  .w-sm-100 {
+    width: 100% !important;
+  }
+}

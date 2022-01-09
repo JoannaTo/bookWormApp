@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Book } from 'src/app/core/models/book.model';
 import { Quote } from 'src/app/core/models/quote.model';
-import { BookService } from 'src/app/core/services/book.service';
 import { QuoteService } from 'src/app/core/services/quote.service';
+import { first } from 'rxjs/operators';
+import { ApiService } from 'src/app/core/services/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-book-page',
@@ -17,10 +19,10 @@ export class AddBookPageComponent implements OnInit {
     quote: new FormControl('', Validators.required),
   });
   bookForm = new FormGroup({
-    imgUrl: new FormControl('', Validators.required),
+    imgPath: new FormControl('', Validators.required),
     name: new FormControl('', Validators.required),
     author: new FormControl('', Validators.required),
-    rate: new FormControl(''),
+    rating: new FormControl(''),
     status: new FormControl('', Validators.required),
     comment: new FormControl(''),
   });
@@ -49,8 +51,9 @@ export class AddBookPageComponent implements OnInit {
     },
   ];
   constructor(
-    private bookService: BookService,
-    private quoteService: QuoteService
+    private apiService: ApiService,
+    private quoteService: QuoteService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {}
@@ -71,26 +74,33 @@ export class AddBookPageComponent implements OnInit {
       }
     }
     this.selectedRating = value;
-    this.bookForm.controls['rate'].setValue(this.selectedRating);
+    this.bookForm.controls['rating'].setValue(this.selectedRating);
   }
 
   addQuote() {
-    let newQuote = new Quote(
-      this.quoteForm.value['author'],
-      this.quoteForm.value['quote']
-    );
-    this.quoteService.addQuote(newQuote);
+    this.apiService
+      .post('quote', this.quoteForm.value)
+      .pipe(first())
+      .subscribe((_data) => {
+        this.router.navigate(['/dashboard/main']);
+      });
+    this.quoteForm.reset();
   }
   addBook() {
-    let newBook = new Book(
-      this.bookForm.value['imgUrl'],
-      this.bookForm.value['name'],
-      this.bookForm.value['author'],
-      this.bookForm.value['rate'],
-      this.bookForm.value['status'],
-      this.bookForm.value['comment']
-    );
-    this.bookService.addBook(newBook);
+    // this.apiService
+    //   .get('book')
+    //   .pipe(first())
+    //   .subscribe((data) => {
+    //     const books = data as Book[];
+    //     console.log('Response', books);
+    //   });
+
+    this.apiService
+      .post('book', this.bookForm.value)
+      .pipe(first())
+      .subscribe((_data) => {
+        this.router.navigate(['/dashboard/main']);
+      });
     this.bookForm.reset();
   }
 }

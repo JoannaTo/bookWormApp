@@ -3,7 +3,7 @@
     <!--Text section-->
     <div class="col-sm-12 textWrapper py-4 px-5">
       <h2>Here you have all your books!</h2>
-      <p class="w-50">
+      <p class="w-50 w-sm-100">
         You can filter them or search for a specific book.If a book is not here
         then you can simply add book by clicking the button below.
       </p>
@@ -14,47 +14,11 @@
 
     <!--All books section-->
     <div
-      class="
-        col-sm-12
-        booksWrapper
-        py-4
-        px-5
-        mt-5
-        d-flex
-        flex-lg-row flex-column
-      "
+      class="col-sm-12 booksWrapper px-3 mt-5 d-flex flex-lg-row flex-column"
     >
       <!--Book list and search-->
       <div class="col-lg-8 col-12 booksSection py-3">
         <!--Book search-->
-
-        <div
-          class="
-            bookSearch
-            d-flex
-            flex-row
-            justify-content-between
-            align-items-center
-          "
-        >
-          <div class="input-group mb-3">
-            <input
-              type="text"
-              class="form-control rounded-pill"
-              placeholder="Search for a book..."
-              aria-label="book"
-              aria-describedby="basic-addon1"
-            />
-          </div>
-          <div class="input-group selectWrapper mb-3">
-            <select class="form-select rounded-pill" id="inputGroupSelect01">
-              <option selected>Choose...</option>
-              <option value="read">Read</option>
-              <option value="inProgress">In progress</option>
-              <option value="unread">Unread</option>
-            </select>
-          </div>
-        </div>
 
         <!--Book list-->
         <app-book-list></app-book-list>

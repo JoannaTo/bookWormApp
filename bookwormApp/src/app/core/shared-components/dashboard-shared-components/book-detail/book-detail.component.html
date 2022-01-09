@@ -1,13 +1,25 @@
-<div class="py-3 d-flex flex-column justify-content-center align-items-center">
+<div
+  class="py-5 d-flex flex-column justify-content-center align-items-center"
+  *ngIf="book"
+>
   <div>
     <div class="card" style="width: 18rem">
-      <img [src]="book.imgPath" class="card-img-top" alt="..." />
+      <img
+        [src]="book.imgPath ? book.imgPath : 'img not found'"
+        class="card-img-top mb-2"
+        alt="..."
+      />
       <div class="card-body">
         <h5 class="card-title">{{ book.author }}</h5>
         <p class="card-text">{{ book.name }}</p>
         <p>{{ book.status }}</p>
-
-        <p>{{ book.comment }}</p>
+        <p>{{ book.rating }}</p>
+        <i
+          *ngFor="let item of [].constructor(book.rating)"
+          class="fas fa-star"
+          [ngStyle]="{ color: '#ffc107' }"
+        ></i>
+        <p class="mt-3">{{ book.comment }}</p>
       </div>
     </div>
   </div>

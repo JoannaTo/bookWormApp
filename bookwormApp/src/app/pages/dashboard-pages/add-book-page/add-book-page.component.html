@@ -5,15 +5,7 @@
       <div class="row">
         <!--Img-->
         <div
-          class="
-            col-lg-6 col-12
-            imgWrapper
-            d-flex
-            flex-lg-row flex-column
-            justify-content-center
-            align-items-center
-            px-5
-          "
+          class="col-lg-6 col-12 imgWrapper d-flex flex-lg-row flex-column justify-content-center align-items-center px-5"
         >
           <div class="text">
             <h2 class="mb-5">Add a quote here!</h2>
@@ -26,13 +18,7 @@
         </div>
         <!--Quote form-->
         <div
-          class="
-            col-lg-6 col-12
-            formWrapper
-            d-flex
-            flex-column
-            justify-content-center
-          "
+          class="mt-sm-1 col-lg-6 col-12 formWrapper d-flex flex-column justify-content-center"
         >
           <form [formGroup]="quoteForm" (ngSubmit)="addQuote()">
             <div class="mb-3">
@@ -71,13 +57,7 @@
     <div class="col-sm-12 bookFormContainer mt-5">
       <div class="row">
         <div
-          class="
-            col-sm-6
-            bookFormWrapper
-            d-flex
-            flex-column
-            justify-content-center
-          "
+          class="col-sm-6 bookFormWrapper d-flex flex-column justify-content-center"
         >
           <form [formGroup]="bookForm" (ngSubmit)="addBook()">
             <div class="mb-3">
@@ -87,7 +67,7 @@
               <input
                 type="text"
                 class="form-control rounded-pill"
-                formControlName="imgUrl"
+                formControlName="imgPath"
               />
             </div>
             <div class="mb-3">
@@ -125,9 +105,9 @@
                 id="inputGroupSelect01"
                 formControlName="status"
               >
-                <option value="1">Read</option>
-                <option value="2">In progress</option>
-                <option value="3" selected>Unread</option>
+                <option value="read">Read</option>
+                <option value="in progress">In progress</option>
+                <option value="unread" selected>Unread</option>
               </select>
             </div>
             <div class="mb-3">
@@ -150,14 +130,7 @@
           </form>
         </div>
         <div
-          class="
-            col-sm-6
-            bookFormTextWrapper
-            d-flex
-            flex-column
-            align-items-center
-            py-3
-          "
+          class="mt-sm-1 col-sm-6 bookFormTextWrapper d-flex flex-column align-items-center py-3"
         >
           <div class="text w-75">
             <h2 class="mb-5">Add a book!</h2>

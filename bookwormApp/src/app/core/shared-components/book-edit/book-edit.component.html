@@ -1,1 +1,65 @@
-<p>book-edit works!</p>
+<div class="row py-4">
+  <div class="col-sm-12">
+    <form [formGroup]="bookForm" (ngSubmit)="updateBook()">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Image URL: </label>
+        <input
+          type="text"
+          class="form-control rounded-pill"
+          formControlName="imgPath"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Name: </label>
+        <input
+          type="text"
+          class="form-control rounded-pill"
+          formControlName="name"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Author: </label>
+        <input
+          type="text"
+          class="form-control rounded-pill"
+          formControlName="author"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Stars: </label>
+        <div class="stars">
+          <a class="btn btn-default" *ngFor="let star of stars">
+            <i (click)="onStarClick(star.id)" [ngClass]="[star.class]"></i
+          ></a>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="" class="form-label">Status:</label>
+        <select
+          class="form-select rounded-pill"
+          id="inputGroupSelect01"
+          formControlName="status"
+        >
+          <option value="read">Read</option>
+          <option value="in progress">In progress</option>
+          <option value="unread" selected>Unread</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Comment: </label>
+        <input
+          type="text"
+          class="form-control rounded-pill"
+          formControlName="comment"
+        />
+      </div>
+      <button
+        type="submit"
+        class="btn btn-secondary text-white rounded-pill mt-5 w-100"
+        [disabled]="!bookForm.valid"
+      >
+        Add book
+      </button>
+    </form>
+  </div>
+</div>

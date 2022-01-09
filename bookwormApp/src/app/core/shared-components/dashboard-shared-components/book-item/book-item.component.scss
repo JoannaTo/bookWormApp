@@ -4,6 +4,9 @@
 
 .card {
   cursor: pointer;
+  img {
+    height: 10rem;
+  }
   .card-title {
     white-space: nowrap;
     overflow: hidden;

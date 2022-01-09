@@ -1,9 +1,8 @@
-<div class="card mx-2" style="width: 12rem">
+<div class="card mx-2 mb-2" style="width: 12rem" *ngIf="book">
   <img
-    [src]="book.imgPath"
+    [src]="book.imgPath ? book.imgPath : 'img not found'"
     class="card-img-top"
-    alt="..."
-    (click)="onMatchRoute()"
+    (click)="onMatchRoute(book.id)"
   />
   <div class="card-body">
     <div
@@ -22,10 +21,10 @@
 
         <ul class="dropdown-menu">
           <li>
-            <a class="dropdown-item" (click)="onEdit()">Edit</a>
+            <a class="dropdown-item" (click)="onEdit(book.id)">Edit</a>
           </li>
           <li>
-            <a class="dropdown-item" (click)="onDelete()">Delete</a>
+            <a class="dropdown-item" (click)="onDelete(book.id)">Delete</a>
           </li>
         </ul>
       </div>

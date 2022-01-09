@@ -49,10 +49,30 @@ module.exports.dbConnect = async () => {
       // Other model options go here
     }
   );
+  const Quote = sequelize.define(
+    "quotes",
+    {
+      id: {
+        type: Sequelize.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+      },
+      author: {
+        type: Sequelize.STRING,
+      },
+      quote: {
+        type: Sequelize.STRING,
+      },
+    },
+    {
+      // Other model options go here
+    }
+  );
 
   await sequelize.sync();
 
   process.db = {
     Book: Book,
+    Quote: Quote,
   };
 };

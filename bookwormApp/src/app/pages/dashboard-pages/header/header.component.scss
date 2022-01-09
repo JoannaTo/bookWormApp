@@ -1,4 +1,4 @@
-.open .dropDownContent {
+.open {
   display: block !important;
 }
 
@@ -37,7 +37,7 @@ nav {
 }
 
 //MEDIA QUERIES
-//PHONE
+
 @media only screen and (max-width: 600px) {
   nav {
     padding-left: 0px !important;
@@ -45,12 +45,20 @@ nav {
     border-radius: 0px !important;
   }
 }
-
-//LAPTOP
 @media only screen and (max-width: 988px) {
   nav {
     padding-left: 0px !important;
     height: auto !important;
     border-radius: 0px !important;
+  }
+}
+@media only screen and (min-width: 993px) {
+  nav {
+    width: 6rem;
+  }
+  @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+    nav {
+      height: 58.5rem;
+    }
   }
 }

@@ -29,15 +29,39 @@ export class MainDashboardComponent implements OnInit {
   searchWord: string = '';
   @ViewChild('chart') chart: ChartComponent | any;
   public chartOptions: Partial<ChartOptions> | any;
-
+  quotes: Quote[];
   chosenQuote: Quote;
 
+  ngOnInit(): void {
+    this.bookService.getBooksAsObservable().subscribe((books) => {
+      if (books.length == 0) {
+        return;
+      }
+      const readCount = books.filter(
+        (book) => book.status.toLowerCase() == 'read'
+      ).length;
+      const unreadCount = books.filter(
+        (book) => book.status.toLowerCase() == 'unread'
+      ).length;
+      const inProgressCount = books.filter(
+        (book) => book.status.toLowerCase() == 'in progress'
+      ).length;
+
+      this.chartOptions.series = [readCount, unreadCount, inProgressCount];
+    });
+    this.quoteService.getAllQuotes().subscribe((res) => {
+      this.quotes = res;
+
+      this.pickAQuote();
+    });
+  }
+
   constructor(
-    private quoteService: QuoteService,
-    private bookService: BookService
+    private bookService: BookService,
+    private quoteService: QuoteService
   ) {
     this.chartOptions = {
-      series: [25, 15, 44],
+      series: [0, 0, 0],
       chart: {
         width: '100%',
         type: 'pie',
@@ -70,12 +94,8 @@ export class MainDashboardComponent implements OnInit {
     };
   }
 
-  ngOnInit(): void {
-    this.chosenQuote = this.quoteService.getQuotes();
+  pickAQuote() {
+    let num = Math.floor(Math.random() * this.quotes.length);
+    this.chosenQuote = this.quotes[num];
   }
-  onEnter() {
-    console.log('On enter mathod');
-    this.bookService.booksFiltered.emit();
-  }
-  onChange(deviceValue) {}
 }
